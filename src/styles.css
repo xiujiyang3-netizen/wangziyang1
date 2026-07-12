@@ -3163,3 +3163,490 @@ a {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* Phone layout: keep the desktop composition intact and switch to a deliberate single-column experience. */
+@media (max-width: 760px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  body {
+    min-width: 0;
+  }
+
+  body::after {
+    display: none;
+  }
+
+  .shell {
+    width: min(100% - 28px, 680px);
+  }
+
+  .hero {
+    min-height: 100svh;
+    padding: 0;
+  }
+
+  .heroFrame {
+    min-height: 100svh;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .heroBgVideo {
+    object-position: 58% center;
+    animation: none;
+    transform: scale(1.04);
+  }
+
+  .heroAtmosphere,
+  .heroVideoPlaceholder::before,
+  .streamHeroMedia,
+  .cinemaGrain {
+    animation: none;
+  }
+
+  .nav,
+  .floatingNav {
+    width: min(100% - 28px, 680px);
+  }
+
+  .nav {
+    padding: 15px 0;
+  }
+
+  .navLinks,
+  .floatingLinks {
+    display: none;
+  }
+
+  .brand,
+  .floatingBrand {
+    font-size: 18px;
+  }
+
+  .contactButton,
+  .floatingContact {
+    min-height: 38px;
+    padding: 0 13px;
+    font-size: 12px;
+  }
+
+  .coverTitle {
+    top: auto;
+    right: 22px;
+    bottom: 112px;
+    left: 22px;
+    transform: none;
+  }
+
+  .coverTitle span,
+  .coverTitle strong {
+    font-size: clamp(48px, 15vw, 72px);
+    line-height: 0.9;
+  }
+
+  .coverFooter {
+    right: 22px;
+    bottom: 20px;
+    left: 22px;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    font-size: 10px;
+  }
+
+  .coverFooter span:last-child {
+    justify-self: start;
+  }
+
+  .heroCasePanel,
+  .heroStatement {
+    display: none;
+  }
+
+  .heroActions {
+    bottom: 145px;
+    left: 22px;
+    gap: 9px;
+  }
+
+  .heroActions a,
+  .heroActions button {
+    min-height: 40px;
+    padding: 0 13px;
+    font-size: 12px;
+  }
+
+  .heroSkillRow {
+    right: 22px;
+    bottom: 18px;
+    left: 22px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 9px;
+  }
+
+  .heroSkill {
+    min-height: 42px;
+    padding-top: 8px;
+  }
+
+  .heroSkill p {
+    font-size: 11px;
+  }
+
+  .aboutPage,
+  .ipCase,
+  .profile,
+  .contactFinal {
+    min-height: auto;
+    padding: 78px 0;
+  }
+
+  .aboutLayout,
+  .ipCaseLayout,
+  .profileGrid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .aboutIndex {
+    position: static;
+    order: -1;
+  }
+
+  .aboutPortrait {
+    order: 2;
+    height: auto;
+    aspect-ratio: 4 / 5;
+  }
+
+  .aboutCopy h2,
+  .ipCaseContent h2,
+  .profileIntro h2,
+  .sectionHead h2 {
+    font-size: clamp(42px, 12vw, 62px);
+    line-height: 0.95;
+  }
+
+  .aboutCopy h3 {
+    margin-top: 18px;
+    font-size: 23px;
+  }
+
+  .aboutStats,
+  .ipStatsGrid,
+  .ipCapabilityGrid,
+  .ipWorkGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ipVisualStack {
+    min-height: 340px;
+  }
+
+  .ipWorkGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .streamHero {
+    height: auto;
+    min-height: 100svh;
+  }
+
+  .streamHeroContent {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    height: auto;
+    min-height: 100svh;
+    padding: 110px 0 28px;
+  }
+
+  .streamFeatureCopy h2 {
+    font-size: clamp(54px, 16vw, 76px);
+  }
+
+  .streamFeatureCopy h3 {
+    margin-top: 18px;
+    font-size: 20px;
+  }
+
+  .streamFeatureCopy > span {
+    font-size: 14px;
+  }
+
+  .streamFeatureCopy button {
+    margin-top: 20px;
+  }
+
+  .characterShowcase {
+    justify-self: stretch;
+    width: 100%;
+    padding: 8px 0 0;
+  }
+
+  .characterCarousel {
+    grid-auto-columns: 132px;
+    gap: 12px;
+    padding: 14px 4px 24px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .characterCard {
+    scroll-snap-align: start;
+    transform: none;
+  }
+
+  .characterCard:nth-child(even) {
+    transform: translateY(8px);
+  }
+
+  .characterCard.isActive,
+  .characterCard:hover,
+  .characterCard:focus-visible {
+    transform: translateY(-8px) scale(1.03);
+  }
+
+  .streamLibrary {
+    padding: 70px 0;
+  }
+
+  .workCategories {
+    top: 0;
+    gap: 6px;
+    margin-bottom: 38px;
+    overflow-x: auto;
+    padding: 10px 0;
+    scrollbar-width: none;
+  }
+
+  .workCategories a {
+    flex: 0 0 auto;
+    padding: 9px 12px;
+    font-size: 12px;
+  }
+
+  .catalogHead,
+  .genreHead {
+    display: block;
+  }
+
+  .catalogHead h2 {
+    font-size: 36px;
+  }
+
+  .catalogHead > span,
+  .genreHead p {
+    display: block;
+    margin-top: 10px;
+    line-height: 1.6;
+  }
+
+  .posterRail {
+    grid-auto-columns: 158px;
+    gap: 11px;
+  }
+
+  .genreSections {
+    gap: 58px;
+    margin-top: 68px;
+  }
+
+  .genreHead > div {
+    gap: 10px;
+  }
+
+  .genreHead h3 {
+    font-size: 29px;
+  }
+
+  .genreGrid,
+  .adShowcaseGrid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .adShowcaseGrid .posterCard {
+    min-height: 250px;
+  }
+
+  .compactPoster .posterCopy strong,
+  .adShowcaseGrid .posterCopy strong {
+    font-size: 25px;
+  }
+
+  .cinemaOverlay {
+    padding: 14px 14px 12px;
+  }
+
+  .cinemaHeader {
+    min-height: 54px;
+  }
+
+  .cinemaHeader h2 {
+    max-width: calc(100vw - 100px);
+    font-size: 17px;
+  }
+
+  .cinemaHeader button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .cinemaStage {
+    padding: 14px 42px;
+  }
+
+  .stepButton {
+    width: 32px;
+    height: 58px;
+  }
+
+  .stepButton.previous {
+    left: 0;
+  }
+
+  .stepButton.next {
+    right: 0;
+  }
+
+  .cinemaControls {
+    grid-template-columns: 78px minmax(0, 1fr) 70px;
+    gap: 8px;
+    min-height: 94px;
+  }
+
+  .timeReadout {
+    font-size: 10px;
+  }
+
+  .thumbnailTimeline,
+  .thumbnailTimeline input {
+    height: 58px;
+  }
+
+  .thumbnailRail {
+    height: 48px;
+    margin-top: 5px;
+  }
+
+  .timelineThumb.isActive {
+    transform: translateY(-8px) scale(1.08);
+  }
+
+  .controlButtons {
+    gap: 4px;
+  }
+
+  .controlButtons button {
+    width: 31px;
+    height: 31px;
+  }
+
+  .cinemaPlaylist button {
+    flex-basis: 106px;
+    font-size: 10px;
+  }
+
+  .profileIntro,
+  .portraitPanel,
+  .infoPanel {
+    min-height: 0;
+  }
+
+  .profileIntro,
+  .infoPanel {
+    padding: 25px;
+  }
+
+  .portraitPanel {
+    aspect-ratio: 4 / 5;
+  }
+
+  .advantagePreview {
+    margin-top: 26px;
+  }
+
+  .advantagePreview article {
+    grid-template-columns: 30px 1fr;
+    gap: 12px;
+    padding: 18px 0;
+    background: none;
+  }
+
+  .advantagePreview svg {
+    display: none;
+  }
+
+  .advantagePreview h3 {
+    font-size: 19px;
+  }
+
+  .profileStrengths {
+    grid-template-columns: 1fr;
+  }
+
+  .strengthCard {
+    min-height: 0;
+  }
+
+  .contactFinal {
+    min-height: 72svh;
+  }
+
+  .contactInner {
+    gap: 22px;
+  }
+
+  .contactFinal h2 {
+    font-size: clamp(44px, 12vw, 62px);
+    line-height: 1;
+  }
+
+  .contactCards {
+    flex-direction: column;
+  }
+
+  .contactCards a,
+  .contactCards button {
+    width: 100%;
+    min-height: 52px;
+  }
+
+  .wechatOverlay {
+    padding: 14px;
+  }
+
+  .wechatModal {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    width: min(100%, 420px);
+    max-height: calc(100dvh - 28px);
+    overflow-y: auto;
+    padding: 22px;
+  }
+
+  .wechatCopy h3 {
+    font-size: 36px;
+  }
+
+  .wechatModal img {
+    max-height: 48vh;
+  }
+}
+
+@media (max-width: 390px) {
+  .aboutStats,
+  .ipStatsGrid,
+  .ipCapabilityGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroActions {
+    display: none;
+  }
+
+  .coverTitle {
+    bottom: 98px;
+  }
+}
