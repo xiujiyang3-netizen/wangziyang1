@@ -886,6 +886,11 @@ function Profile() {
         </InfoPanel>
 
       </div>
+      <div className="shell collabNote">
+        <p>
+          注：以上项目均为本人与固定制作搭档协作落地，双方分工明确，本人主责甲方需求对接、项目全流程管控与团队统筹，内容创作与质量审核，本人可独立胜任岗位工作。
+        </p>
+      </div>
     </section>
   );
 }
